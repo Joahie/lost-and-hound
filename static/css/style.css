@@ -1,0 +1,281 @@
+
+/*****************************
+  Overall Starts
+  *****************************/
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  *{
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Filson', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  section{
+    padding: 75px;
+  }
+  
+  /*****************************
+  Overall Ends
+  *****************************/
+
+
+  /*****************************
+  Sign in begins
+  *****************************/
+
+  
+  #sign-in #incorrect{
+    color: red;
+    text-align: center;
+    font-size: 20px;
+  }
+  #sign-in input{
+      color: black;
+      border-radius: 15px;
+      width: 400px;
+      height: 50px;
+      padding-left: 15px;
+      margin-bottom: 15px;
+      border-width: 4px;
+      border-color: black;
+      font-size: 20px;
+  }
+  #sign-in #button:hover{
+    color: white;
+    background: #25272e !important;
+    }
+  #sign-in #button{
+        width: 400px;
+  height: 50px;
+    color: white;
+    background: black;
+  }
+  
+  #sign-in h1{
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 50px;
+  }
+  .button-container{
+    display: flex;
+    justify-content: center;
+  }
+  #sign-in .container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+  }
+  #sign-in form{
+    margin: 50px auto;
+  justify-content: center;
+  display: flex;
+  }
+  #sign-in h2{
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  #sign-in a{
+    color: black;
+  }
+  form.signin{
+    border-radius: 65px;
+    background-color: rgba(255, 255, 255, 0.7);
+  
+    width: 550px;
+    box-shadow: -3px -3px 9px #aaa9a9a2,
+                3px 3px 7px rgba(147, 149, 151, 0.671);
+  }
+  
+  /*****************************
+  Sign in ends
+  *****************************/
+
+  /*****************************
+  Sign up begins
+  *****************************/
+#sign-up input{
+  color: black;
+  border-radius: 15px;
+  width: 400px;
+  height: 50px;
+  padding: 10px;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  border-width: 4px;
+  border-color: black;
+  font-size: 20px;
+}
+#sign-up #button{
+color: white;
+background: black;
+margin-bottom: 50px;
+
+}
+#sign-up #button:hover{
+  color: white;
+  background: #25272e !important;
+  }
+
+#sign-up h1{
+font-size: 50px;
+padding-top: 50px;
+text-align: center;
+padding-bottom: 25px;
+}
+
+#sign-up h2{
+padding:50px;
+line-height: 35px;
+  text-align: center;
+  }
+
+#sign-up .container {
+display: flex;
+justify-content: center;
+position: absolute;
+right: 50%;
+left: 50%;
+}
+#sign-up form{
+margin: 50px auto;
+justify-content: center;
+display: flex;
+}
+#sign-up h2{
+padding-top: 15px;
+text-align: center;
+}
+#sign-up a{
+color: black;
+}
+#sign-up #incorrect{
+  color: red;
+  text-align: center;
+  font-size: 20px;
+}
+
+form.sign-up{
+  border-radius: 65px;
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.7);
+
+  box-shadow: -3px -3px 9px #aaa9a9a2,
+              3px 3px 7px rgba(147, 149, 151, 0.671);
+}
+
+/*****************************
+Sign up ends
+*****************************/
+
+/*****************************
+Report a pet begins
+*****************************/
+#reportapet input.feedback-input{
+  color: black;
+  border-radius: 15px;
+  width: 400px;
+  height: 50px;
+  padding: 10px;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  border-width: 4px;
+  border-color: black;
+  font-size: 20px;
+}
+#reportapet .radio{
+  font-size: 20px;
+  color: black;
+  width: 20px; 
+  height: 20px;
+  accent-color: black;
+
+}
+#reportapet input.feedback-input{
+  color: gray;
+}
+#reportapet #button{
+color: white;
+background: black;
+margin-bottom: 50px;
+display: flex;
+justify-content: center;
+margin-top: 30px;
+
+}
+#reportapet #button:hover{
+  color: white;
+  background: #25272e !important;
+  }
+
+#reportapet h1{
+font-size: 50px;
+padding-top: 50px;
+text-align: center;
+padding-bottom: 25px;
+}
+
+#reportapet h2{
+padding:50px;
+line-height: 35px;
+  text-align: center;
+  }
+
+#reportapet .container {
+display: flex;
+justify-content: center;
+position: absolute;
+right: 50%;
+left: 50%;
+}
+#reportapet form{
+margin: 50px auto;
+justify-content: center;
+display: flex;
+}
+#reportapet h2{
+padding-top: 15px;
+text-align: center;
+}
+#reportapet a{
+color: black;
+}
+#reportapet #incorrect{
+  color: red;
+  text-align: center;
+  font-size: 20px;
+}
+
+form.reportapet{
+  border: 5px solid black;
+  border-radius: 65px;
+  width: 1000px;
+}
+#reportapet #left{
+margin-right: 15px;
+}
+.imageupload label{
+  display: inline-block;
+  border: 4px solid black;
+  color: gray;
+  padding: 0.5rem;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 400px;
+  height: 50px;
+  margin-top: 0px;
+  padding: 10px;
+  padding-left: 15px;
+}
+/*****************************
+Report a pet ends
+*****************************/

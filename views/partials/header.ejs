@@ -1,0 +1,123 @@
+<header>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    
+        <style>
+
+#header-box{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #CE9A72;
+  height: 120px;
+  align-items: center;
+}
+.logo-text{
+color: #FFEFCB;
+font-size: 40px;
+font-family: "M PLUS Rounded 1c";
+margin-left:20px ;
+}
+.logo-texts{
+color: #FFEFCB;
+font-size: 40px;
+font-family: "M PLUS Rounded 1c";
+text-decoration: none;
+margin-left:20px;
+}
+.logo-img{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo-img:hover,
+.logo-texts:hover{
+  cursor: pointer;
+}
+.texts-box{
+display: flex;
+margin-left: auto;
+justify-content: space-evenly;
+width: 1100px;
+}
+.header-text{
+font-weight: 700;
+color: #FFEFCB;
+font-size: 40px;
+font-family: "M PLUS Rounded 1c";
+text-decoration: none;
+height: 60px;
+
+}
+.header-text:hover{
+  text-decoration: underline;
+}
+#logo{
+height: 80px;
+}
+#logo-box{
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-left: 50px;
+line-height: 50px;
+}
+@media (max-width:1400px) {
+.texts-box{
+  display: none;
+}
+}
+@media (max-width:1600px) {
+#sign{
+  display: none;
+}
+}
+
+            </style>
+        </head>
+        <body style="margin:0;">
+            
+            
+<div id="header-box">
+    <div id="logo-box">
+        <a href="/" class="logo-img"><img src="https://i.imgur.com/CqnlWcl.png" id="logo"></a>
+        <a href="/" class="logo-texts">Paws and Found</a>
+    </div>
+    <div class="texts-box">
+  <a href="/" class="header-text">Home</a>
+  <a href="/about" class="header-text">About</a>
+  <a href="/listings" class="header-text">Listings</a>
+  <a href="/reportAPet" class="header-text">Report a Lost Pet</a>
+  
+    </div>
+    <% if (user) { %>
+        <form action="/signout" method = "POST"><button id="sign">Sign Out</button></form>
+        <% } else { %>
+        <button id="sign" onClick="redirect('/signin')">Sign In</button>
+        <% } %>   
+</div>
+
+<style>
+#sign{
+    background-color: black;
+    color: #FFEFCB;
+    font-size: 40px;
+    text-decoration: bold;
+    border-radius: 35px;
+    border: 3px black solid;
+    padding:4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family:"M PLUS Rounded 1c";
+    margin-right: 40px;
+}
+</style>
+       
+        </body>
+    </html>
+
+</header>

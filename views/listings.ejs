@@ -1,0 +1,271 @@
+<style>
+.top-box{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0);
+    height:300px;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-bar-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  .search-bar{
+    height: 70px;
+    width: 600px;
+    font-family:"M PLUS Rounded 1c" ;
+    font-size: 30px;
+    padding: 0px 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 10px black;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+  }
+  .search-button{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 0px 10px black;
+    border: none;
+  }
+  .search-image{
+    height: 70px;
+  }
+  .filter-button,
+  .search-button{
+    height: 70px;
+  }
+  section.listings{
+    background-image: url('https://i.imgur.com/Yi9PWK7.jpg');
+    padding: 0px;
+    padding-left: 0px;
+  }
+  .listing-grid{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 400px 400px 400px 400px;
+    padding: 65px;
+    justify-content: center;
+    grid-gap: 65px;
+  }
+  .listing-boxes{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px gray;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 10px black;
+  }
+  
+  .listing-image{
+    width: 400px;
+    height: 250px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .Animal-type{
+    font-size: 40px;
+    font-family: "M PLUS Rounded 1c";
+    text-align: center;
+  }
+  .listing-name{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-size: 25px;
+    font-family: "M PLUS Rounded 1c";
+    margin:0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 3px;
+  }
+  .breed{
+    flex: 1;
+    text-align: end;
+  }
+  #date{
+    padding-top: 10px;
+    font-size: 15px;
+    color: gray;
+    padding-top: auto;
+  }
+  .short-description{
+    color: black;
+    font-family: "M PLUS Rounded 1c";
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .specific-info{
+    font-family: "M PLUS Rounded 1c";
+    line-height: 1.5em;
+    font-size: 14px;
+    color: #777;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .last-seen-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+  }
+  .info-box{
+    margin-top: 20px;
+  }
+  .last-seen{
+    display: flex;
+    flex-direction: row;
+  }
+  .contact-title,
+  .last-seen-title{
+    color: #003049;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-family: "M PLUS Rounded 1c";
+  }
+  .listing-name a{
+    text-decoration: none;
+    color: black;
+  }
+  .contact-body,
+  .last-seen-body{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: end;
+  }
+  .email,
+  .phone,
+  .last-seen-location1,
+  .last-seen-location2{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: left;
+  font-family: "M PLUS Rounded 1c";
+  font-size: 20px;
+  color: gray;
+  }
+  .contact{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #bold{
+    font-weight: bold;
+  }
+    </style>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Listings</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <script src="/js/script.js"></script>
+  <link rel="icon" type="image/x-icon" href="TEMPLATE">
+
+</head>
+
+<body>
+  <!--Header-->
+  <%- include('partials/header.ejs') %>
+
+  <!--Body text-->
+  <section class="listings">
+    
+	<div class="top-box">
+        <div class="search-bar-box"></div>
+        <form method = "POST" action = "/listingsSearch">      
+            <div class="search-box">
+
+                    <input class="search-bar" type="text" placeholder="Search" name = "search">
+                    <div class="search-button-box">
+                        <button class="search-button"><img class="search-image" src="https://i.imgur.com/L7NKofD.png"></button>
+
+                    </div>
+                </div>                    </form>
+
+            </div>
+            </div>
+        </div>
+        <div class="listing-grid">
+        <%for(let i = 0; i < listing.length; i++){%>
+
+            <div class="listing-boxes">
+                <div>
+                    <img src="/routes/upload/<%=listing[i].image%>" class="listing-image">
+                </div>
+                <div class="Animal-type">
+                    <%=listing[i].species%>: <%=listing[i].petName%>
+                </div>
+                <div class="short-description">
+                    <%=listing[i].description%>
+                </div>
+                <div class="listing-name">
+                    <div class="name">
+                        <span id="bold">Breed:</span> <%=listing[i].breed%>
+                    </div>
+                </div>
+                <div class="listing-name">
+                    <div class="name">
+                        <span id="bold"> Last seen:</span> <%=listing[i].city%>, <%=listing[i].state%>
+                    </div>
+                </div>
+                <%if(listing[i].reward){%>
+                    <div class="listing-name">
+                        <div class="name">
+                            <span id="bold">Reward:</span> $<%=listing[i].reward%>
+                        </div>
+                    </div>
+                <%}%>
+                <div class="listing-name">
+                    <div class="name">
+                        <span id="bold">Contact:</span> <a href="mailto:<%=listing[i].email%>"><%=listing[i].email%></a>
+                    </div>
+                </div>
+
+                
+                <div class="short-description" id = "date">
+                    <%=listing[i].date%>
+                </div>
+            </div>			
+
+            <%}%>
+        </div>
+    
+            </div>
+  </section>
+
+  <!--Footer-->
+  <%- include('partials/footer.ejs') %>
+
+</body>
+
+</html>
+

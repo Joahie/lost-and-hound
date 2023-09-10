@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Report a Lost Pet</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <script src="/js/script.js"></script>
+  <link rel="icon" type="image/x-icon" href="TEMPLATE">
+
+</head>
+
+<body>
+  <!--Header-->
+  <%- include('partials/header.ejs') %>
+
+  <!--Body text-->
+  
+  <section id = "reportapet">
+    <form method = "POST" action = "/reportAPet" class ="reportapet" enctype="multipart/form-data">      
+      <div class = "content">
+      <h1>Report a Lost Pet</h1>
+      <br>
+      <%if(!user){%>
+        <h2>You must be logged in to report a lost pet. Click <a href="/signin">here</a> to sign in.</h2>
+
+      <%}else if(done){%>
+        <h2>Your lost pet has been added to the listings. Head to the <a href="/listings">listings</a> page to view your report.</h2>
+        <%}else{%>
+          <input id = "left" required  name="species" type="text" class="feedback-input" placeholder="Species"/>
+
+          <input required  name="name" type="text" class="feedback-input" placeholder="Pet Name"/>
+  <br>
+      <input id = "left"required name="city" type="text" class="feedback-input" placeholder="Last Seen Location (City)"/>
+      <input required  name="state" type="text" class="feedback-input" placeholder="Last Seen Location (State)"/>
+      <br>
+      <input required id = "left" name="breed" type="text" class="feedback-input" placeholder="Breed"/>
+      <input min = "0" name="reward" type="number" class="feedback-input" placeholder="Reward (optional)"/>
+      <br>
+      <input required id = "left" name="additional" type="text" class="feedback-input" placeholder="Description"/>
+      <span class = "imageupload">
+
+      <input required id="image"name="image" type="file" class="feedback-input" placeholder="Image" hidden/>
+      <label for="image">Image</label>
+      </span>
+      <br>
+
+      <div style = "display: flex; justify-content: center;">
+        <input id = "button" type="submit" value="Submit" class="feedback-input" style = "justify-content: center;   align-items: center;
+;"/>
+      </div>
+      <%}%>
+      </div>
+
+    </form> 
+
+  </section>
+   
+
+  <!--Footer-->
+  <%- include('partials/footer.ejs') %>
+
+</body>
+
+</html>

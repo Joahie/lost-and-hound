@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <script src="/js/script.js"></script>
+  <link rel="icon" type="image/x-icon" href="TEMPLATE">
+
+</head>
+
+<body>
+  <!--Header-->
+  <%- include('partials/header.ejs') %>
+
+  <!--Body text-->
+  <section>
+		<div class="about-columns">
+			<div class="motto">
+			</div>
+			<div class="why-us-box">
+				<div class="why-us-text">
+					<div class="about-title">About Us</div>
+					<div class="about-body">According to American Humane, over 10 million pets go missing in the United States every year. Our platform, Lost and Hound, is dedicated to assisting pet owners through an online community. Instead of posting flyers aimlessly around the streets, our platform provides a more effective solution. It gives the owners a wider audience for their search and provides a way for them to easily share detailed information about their missing pets</div>
+				</div>
+				<div class="why-us-image-box">
+					<img class="why-us-image" src="https://i.imgur.com/VPE9K5t.jpg">
+				</div>
+			</div>
+			<div class="about-us-box">
+				<div class="motto-box">
+					<div class="about-us-image-box1">
+						<img src="https://i.imgur.com/n1xbbTT.jpg" class="about-dog1">
+					</div>
+					<div class="about-us-image-box2">
+						<img src="https://i.imgur.com/gq0Q6NG.jpg" class="about-dog1">
+					</div>
+				</div>
+				<div class="about-text">
+					<div class="why-us-title">Why Us</div>
+					<div class="why-us-body">Each day, thousands of people people just like you provide compassionate care to those in need. Our network of generous donors, volunteers and employees share a mission of preventing and relieving suffering, here at home and around the world. We roll up our sleeves and donate time, money and blood. We learn or teach life-saving skills so our communities can be better prepared when the need arises. We do this every day because the Red Cross is needed - every day.</div>
+				</div>
+			</div>
+			<div class="goal-box">
+				<div class="goal-text">
+					<div class="goal-title">
+						Our Goal
+					</div>
+					<div class="goal-body">
+						Our goal at Lost and Hound is to reduce the number of loss pets in Washington by providing an easily accessible platform for pet owners and helpers alike. Additionally, we are dedicated to improving the mental wellness of owners looking to find their pets by offering a quicker way to ask for help.
+
+					</div>
+				</div>
+				<img class="goal-picture" src="https://i.imgur.com/pyPAoHW.jpg">
+			</div>
+		</div>
+					
+			<div class="main__img--container">
+			</div>
+  </section>
+
+  <!--Footer-->
+  <%- include('partials/footer.ejs') %>
+
+</body>
+
+</html>
+
+<style>
+    
+.about-column{
+  display: flex;
+  flex-direction: column;
+  
+}
+.about-us-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #FFEFCB;
+}
+.about-title{
+  color: #003049;
+  font-size: 50px;
+  font-weight: 700;
+
+}
+.about-dog1{
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+}
+.about-text{
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  text-align: left;
+  padding-left: 50px;
+  justify-content: center;
+}
+.about-body, .why-us-body,.goal-body {
+  color:black;
+  font-size: 25px;
+  line-height: 40px;
+  padding-top: 20px;
+}
+.motto-image{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+}
+.motto{
+  background-image:	url("https://i.imgur.com/cFd64XL.jpg");
+  background-position: bottom;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+}
+.goal-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom:  50px;
+  padding-top: 50px;
+}
+section{
+    padding: 0px;
+}
+.goal-text{
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin-right: 50px;
+  justify-content: center;
+}
+.goal-body{
+  text-align: left;
+}
+.goal-title{
+  color: #003049;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: left;
+}
+.goal-picture{
+  height: 400px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px black;
+}
+.goal-title, .goal-body{
+    padding-left: 170px;
+}
+.motto-box{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+.why-us-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom:  50px;
+  padding-top: 50px;
+}
+.why-us-image{
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px black;
+}
+.why-us-text{
+  display: flex;
+   flex-direction: column;
+  padding-left: 50px;
+  width: 700px;
+  margin-right: 50px;
+  justify-content: center;
+}
+.why-us-title{
+  color: #003049;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: left;
+}
+.about-us-image-box1{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.about-us-image-box2{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+</style>
