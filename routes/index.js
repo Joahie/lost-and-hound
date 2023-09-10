@@ -90,15 +90,19 @@ router.post("/listingsSearch",  async (req, res)=>{
     var answer = req.body;
     var results = await MongoPets.find({}).toArray()
     var endString = ""
+ 
+  //Gets the entries from the database 
     for(let i = 0; i<results.length; i ++){
         let temp = "S: "+results[i].species+ ". PN: "+results[i].petName + ". L: "+results[i].city + "," +results[i].state + ". B: " + results[i].breed +". D: " +results[i].additional + ". "
         let tempInt = i + 1
         endString += tempInt + ". " + temp
     }
+    //Training text gives it specific instructions on input and what to output
     const trainingSection = "I'm going to give you a list of pet descriptions and a search query. Could you go through the pet descriptions and see if any of them are similar to the query? If so, type the corresponding number. If not, say false. You are only allowed to say \"false\" or the number that the search query corresponds to. Within each description of pets (separated by numbers) there will be specific information. S: species. PN: pet name. L: location. B: breed. D: extra information. When searching, make sure to take into account the breed of the animal. For example, if the breed is a golden retriever and the search query is a blond dog, it would be the golden retriever because they're blond. Also take into account the location of the animal. The descriptions are separated by numbers. Descriptions:"
     const searchQuery = "Search query: " + answer.search
     const finalString = trainingSection + endString + searchQuery
     
+    //Gives the prompt tp GPT 3.5
 const gpt=async(prompt)=>{
     const chatCompletion = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
@@ -108,6 +112,8 @@ const gpt=async(prompt)=>{
       return chatCompletion.choices[0].message.content;
     }
     var databaseId = await gpt(finalString)
+
+  //If there are no results then return a page without results
     if(databaseId.toLowerCase() == "false"){
         return res.render("results",{
         user: req.session.email,
@@ -117,9 +123,8 @@ const gpt=async(prompt)=>{
     console.log(databaseId)
     databaseId = databaseId -1;
 
+  //If it finds results, render the page with the results from the database
     var searchResult =  results[databaseId]
-    console.log(results)
-    console.log(searchResult)
     return res.render("results",{
         result: true,
         user: req.session.email,
