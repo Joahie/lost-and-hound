@@ -9,7 +9,7 @@ const env = require("dotenv").config()
 const random_uuid = uuidv4();
 const OpenAI = require("openai");
 const openai = new OpenAI({
-  apiKey:"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"
+  apiKey:process.env.KEY
 });
 
 const fileUpload = require('express-fileupload');
