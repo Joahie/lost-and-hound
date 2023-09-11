@@ -1,7 +1,7 @@
 {
-  "name": "express-template-accounts",
+  "name": "lost-and-hound",
   "version": "1.0.0",
-  "description": "A template",
+  "description": "A website",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
